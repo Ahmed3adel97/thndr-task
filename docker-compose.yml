@@ -28,4 +28,4 @@ services:
         depends_on:
             - vernemq
         ports:
-            - '8000:8000'                    
+            - '8080:8000'                    

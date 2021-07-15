@@ -6,18 +6,17 @@ import time
 time.sleep(10)
 data = {}
 def on_connect(client, userdata, flags, rc):
-    print("Connected with result code " + str(rc))
-
 
     client.subscribe([("thndr-trading", 1)])
 
 
 
 def on_message(client, userdata, message):
-    # strr = str(message.payload)
-    # print("recieved" +strr)
+
     stock = json.loads(message.payload)
     data[stock['stock_id']] = stock
+
+    
 broker_address = "vernemq"
 port = 1883
 
